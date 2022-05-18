@@ -1,15 +1,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700;800;900&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.top {
+.navbar {
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 375px;
     height: 67px;
+    display: flex;
+    justify-content: space-around;
     position: fixed;
- 
+    z-index: 2;
     background-color: #C3CFD9;
 }
 
-.top h1 {
+.navbar h1 {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
