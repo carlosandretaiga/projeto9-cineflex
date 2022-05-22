@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 
-export default function Footer() {
+export default function Footer({children}) {
 
     return (
         <>
 
             <ContainerFooter>
-                <h1> Footer App</h1>
+               {children}
             </ContainerFooter>
 
         </>
@@ -15,9 +15,7 @@ export default function Footer() {
 }
 
 const ContainerFooter = styled.div`
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
+    margin: 0 auto; 
     position: fixed;
     margin-top: 150px;
     bottom: 0;
@@ -28,10 +26,5 @@ const ContainerFooter = styled.div`
     background-color: #DFE6ED;
     border: 1px solid #9EADBA;
     z-index: 1;
-    margin: 0 auto;
-    min-height: 70px;
-    padding: 25px 115px;
-    font-size: 18px;
-    color: #293845;
-    text-align: center;
+    
 `

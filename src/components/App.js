@@ -14,7 +14,7 @@ export default function App() {
             <Routes>
                 <Route path='/' element={<SelectMovie /> }/>
                 <Route path='/sessions/:movieId' element={<SelectSessions />}/> 
-                <Route path='/seats/:idSession' element={<SelectSeats />}/>
+                <Route path='/seats/:sessionId' element={<SelectSeats />}/>
                 <Route path='/order-placed' element={<OrderPlaced />}/>
             </Routes>
                   

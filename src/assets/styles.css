@@ -13,7 +13,6 @@
 
 body {
   width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   background-color: var(--cor-fundo);
@@ -42,6 +41,6 @@ body::-webkit-scrollbar {
   font-family: "Righteous";
   z-index: 1;
   width: 375px;
-  height: 853px;
+  height: 100%;
   background-color: white;
   }

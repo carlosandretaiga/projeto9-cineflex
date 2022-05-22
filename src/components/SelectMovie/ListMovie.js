@@ -36,7 +36,7 @@ export default function ListMovie() {
            <SelectMovie>
                 <h3>Selecione o filme</h3>
             <CardMovies>
-            {movies.map(movie => <Movie posterURL={movie.posterURL} id={movie.id}/>)}
+            {movies.map((movie, index) => <Movie key={index} posterURL={movie.posterURL} id={movie.id}/>)}
             </CardMovies>
             </SelectMovie>
         </>
