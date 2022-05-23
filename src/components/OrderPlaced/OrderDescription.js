@@ -8,8 +8,7 @@ import { useNavigate } from "react-router-dom";
 export default function OrderDescription (props) {
 
     const navigate = useNavigate(); 
-
-    const {data, setData} = props;
+    const {data, setData} = props; 
 
     //const {titulo, hora, diaMes} = data; 
 

@@ -24,18 +24,18 @@ function EnviaFooter({title, posterURL, weekday, name}) {
 export default function ListSeats (props) {
 
     const navigate = useNavigate(); 
-
+    
+    const {setData, data} = props;
     const {sessionId} = useParams(); 
     const [sessions, setSessions] = useState({}); 
     const [seats, setSeats] = useState([]);
     const [days, setDays] = useState({});
     const [hours, setHours] = useState(''); 
 
-    const [hora, setHora] = useState(''); 
-    const [dia, setDia] = useState(''); 
-    const [titulo, setTitulo] = useState(''); 
+    const [hora, setHora] = useState(); 
+    const [dia, setDia] = useState(); 
+    const [titulo, setTitulo] = useState(); 
 
-    const {data, setData} = props; 
 
     const [comprador, setComprador] = useState(); 
     const [cpf, setCpf] = useState(); 
@@ -66,12 +66,12 @@ export default function ListSeats (props) {
             const diaMes = response.data.day.date;
             const hora = response.data.name; 
             const titulo = response.data.movie.title; 
-
-            setData({...data, titulo: titulo, hora:hora, diaMes: diaMes}); 
+            setData({...data, diaMes: diaMes}); 
             setTitulo(titulo); 
-            setHora(hora);
-        
-            
+            setDia(dia);
+            setHora(hora); 
+            setAssento(assento);
+           
         })
        }, [])
 
@@ -88,19 +88,17 @@ export default function ListSeats (props) {
 
     function submitForm (event) {
         event.preventDefault(); 
-        
-        if(assento.length === 0) {
-            alert("Você precisa escolher pelo menos 1 (um) assento!"); 
-        } else {
-            setData({
-                ...data, 
-                assentos: assento,
-                hora: hora, 
-                comprador: comprador,
-                cpf: cpf
-            });
-        
 
+        if(assento.length === 0) {
+            alert("Faltou os assentos!");
+        } else {
+            setData({...data,
+            assento: assento,
+            dia: dia, 
+            hora: hora,
+            nome: comprador, 
+            cpf: cpf
+        });
         const reserva = {
             ids: assento,
             name: comprador,
@@ -116,7 +114,7 @@ export default function ListSeats (props) {
         promise.then(navigate("/sucess")); 
 
     }
-    }
+}
 
 
 

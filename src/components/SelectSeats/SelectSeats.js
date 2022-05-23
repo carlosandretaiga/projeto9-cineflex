@@ -5,14 +5,14 @@ import ListSeats from "./ListSeats";
 import { useState } from "react";
 export default function SelectSeats (props) {
 
-    const [data, setData] = useState({});
+    const {data, setData} = props; 
+
 
     return (
         <>
-
         <Container>
             <Navbar /> 
-            <ListSeats data={data} setData={setData} /> 
+            <ListSeats data={data} setData={setData}/> 
         </Container>
 
         </>
