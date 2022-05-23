@@ -1,13 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-
+import { useState } from "react";
 import SelectMovie from './SelectMovie/SelectMovie';
 import SelectSeats from './SelectSeats/SelectSeats';
 import OrderPlaced from './OrderPlaced/OrderPlaced';
 import SelectSessions from './SelectSessions/SelectSessions';
 
-export default function App() {
+export default function App(props) {
+
+    const [data, setData] = useState({});
 
     return (
         <BrowserRouter>
@@ -15,7 +17,7 @@ export default function App() {
                 <Route path='/' element={<SelectMovie /> }/>
                 <Route path='/sessions/:movieId' element={<SelectSessions />}/> 
                 <Route path='/seats/:sessionId' element={<SelectSeats />}/>
-                <Route path='/order-placed' element={<OrderPlaced />}/>
+                <Route path='/sucess' element={<OrderPlaced data={data} setData={setData}/>}/>
             </Routes>
                   
         </BrowserRouter>

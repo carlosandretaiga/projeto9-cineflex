@@ -40,8 +40,6 @@ export default function ListSessions() {
     const [movies, setMovies] = useState({}); 
     const [days, setDays] = useState([]);
     
-    
-
 
    useEffect(() => {
     const promise = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${movieId}/showtimes`); 
@@ -58,7 +56,7 @@ export default function ListSessions() {
             <ContainerSessions>
             <h1> Selecione um horário </h1>
            
-           {days.map(day => <SessionMovie weekday={day.weekday} date={day.date} showtimes={day.showtimes.map(hour => <Link to={`/seats/${hour.id}`}><Button>{hour.name} </Button></Link>)}/>)}
+           {days.map((day, index) => <SessionMovie key={index} weekday={day.weekday} date={day.date} showtimes={day.showtimes.map(hour => <Link to={`/seats/${hour.id}`}><Button>{hour.name} </Button></Link>)}/>)}
 
             </ContainerSessions>
             <Footer>

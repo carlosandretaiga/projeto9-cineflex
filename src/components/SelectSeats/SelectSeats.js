@@ -1,17 +1,18 @@
 import Container from "../Container/Container";
-import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import ListSeats from "./ListSeats";
 
+import { useState } from "react";
+export default function SelectSeats (props) {
 
-export default function SelectSeats () {
+    const [data, setData] = useState({});
 
     return (
         <>
 
         <Container>
             <Navbar /> 
-            <ListSeats /> 
+            <ListSeats data={data} setData={setData} /> 
         </Container>
 
         </>
